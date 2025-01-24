@@ -450,7 +450,7 @@ class UnityCommunication(object):
         response = self.post_command({'id': str(time.time()), 'action': 'point_cloud'})
         return response['success'], json.loads(response['message'])
 
-    def render_script(self, script, randomize_execution=False, random_seed=-1, processing_time_limit=10,
+    def render_script(self, script, randomize_execution=False, random_seed=-1, processing_time_limit=30,
                       skip_execution=False, find_solution=False, output_folder='Output/', file_name_prefix="script",
                       frame_rate=5, image_synthesis=['normal'], save_pose_data=False,
                       image_width=640, image_height=480, recording=False,
@@ -498,12 +498,10 @@ class UnityCommunication(object):
             message = response['message']
         
         # message = json.loads(message)
-        human_success = True if message['0']['message'] == 'Success' else False
-        if len(message) == 2:
-            ah_success = True if message['1']['message'] == 'Success' else False
-        else:
-            ah_success = False
-        return response['success'], human_success, ah_success, message
+        success_msgs = []
+        for agent in range(len(message)):
+            success_msgs.append(True if message[str(agent)]['message'] == 'Success' else False)
+        return response['success'], success_msgs, message
 
         
 def _decode_image(img_string):
