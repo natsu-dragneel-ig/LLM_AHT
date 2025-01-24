@@ -13,7 +13,7 @@ This repository contains the supplementary files for a hybrid architecture for a
 ├── ASP/human_pre.sp        # Answer Set Prolog implementation of the human.
 ├── simulation              # Files from the VirtualHome domain.
 ├── main.py                 # Main file
-├── human.model             # Behaviour model of the human learned by the ad hoc agent.
+├── Models                  # Behaviour models learned by the ad hoc agent for other agents.
 ├── state.csv               # Data used for creating the behaviour model.
 └── utils.py                # Utility file.
 ```
