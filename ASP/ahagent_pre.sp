@@ -1,5 +1,5 @@
-#agent = {ahagent}.
-#other_agents = {human}.
+% #agent = {ahagent}.
+% #other_agents = {human}.
 #all_agents = #agent + #other_agents.
 #step = 0..n.
 
@@ -9,8 +9,9 @@
 #actions = #agent_actions + #exogenous_actions.
 
 #inertial_f = at(#agent,#locations) + in_hand(#agent,#graspable) + on(#objects,#surfaces) + opened(#electricals) + switchedon(#appliances)
-              + made(#drinks) + agent_at(#other_agents,#locations) + agent_hand(#other_agents,#graspable).
-#fluents = #inertial_f.
+              + made(#drinks).
+#defined_f = agent_at(#other_agents,#locations) + agent_hand(#other_agents,#graspable).
+#fluents = #inertial_f + #defined_f.
 
 predicates
 holds(#fluents, #step).
@@ -74,7 +75,7 @@ holds(switchedon(A),I+1) :- occurs(exo_switchon(O,A),I), #other_agents(O), #appl
 holds(made(coffee),I) :- holds(on(coffeepot,coffeemaker),I), holds(switchedon(coffeemaker),I).
 
 % prevent agent from starting unnecessary actions that will prolong the game time - need more like this
-holds(made(coffee),I+1) :- holds(agent_hand(human,coffeepot),I).
+holds(made(coffee),I+1) :- holds(agent_hand(O,coffeepot),I), #other_agents(O).
 
 % next_to works both ways. If not specified then not next_to each other
 next_to(L1,L2) :- next_to(L2,L1).
@@ -110,6 +111,9 @@ next_to(L1,L2) :- next_to(L2,L1).
 
 % impossible to grab a third object if two objects are already in the hand of the agent
 -occurs(grab(R,O3),I):- holds(in_hand(R,O1),I), holds(in_hand(R,O2),I), O1 != O2, O2 != O3, O1 != O3, #agent(R), #graspable(O1), #graspable(O2), #graspable(O3).
+
+% impossible to grab coffee - not required; but lead to error when the agent randomly decide to pick somehtng while waiting
+-occurs(grab(R,coffee),I) :- #agent(R).
 
 %% put
 % impossible to put an object down if the objects is not in the hand of the agent.
@@ -179,6 +183,7 @@ holds(F,I+1) :- #inertial_f(F), holds(F,I), not -holds(F,I+1).
 
 -occurs(A,I) :- not occurs(A,I).
 -holds(F,0) :- #inertial_f(F), not holds(F,0).
+-holds(F,I) :- #defined_f(F), not holds(F,I).
 
 % --------------------------- planning ---------------------------%
 

@@ -1,5 +1,6 @@
 #agent = {human}.
-#other_agents = {ahagent}.
+#other_agents = {ahagent1, ahagent2}.
+% #other_agents = {ahagent}.
 #all_agents = #agent + #other_agents.
 #step = 0..n.
 #value = 0..5.
@@ -107,6 +108,9 @@ cost(move(R,L),2) :- #agent(R), #locations(L).
 
 % impossible to grab a third object if two objects are already in the hand of the agent
 -occurs(grab(R,O3),I):- holds(in_hand(R,O1),I), holds(in_hand(R,O2),I), O1 != O2, O2 != O3, O1 != O3, #agent(R), #graspable(O1), #graspable(O2), #graspable(O3).
+
+% impossible to grab coffee - not required; but lead to error when the agent randomly decide to pick somehtng while waiting
+-occurs(grab(R,coffee),I) :- #agent(R).
 
 %% put
 % impossible to put an object down if the objects is not in the hand of the agent.

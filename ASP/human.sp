@@ -1,7 +1,7 @@
-#const n = 4.
+#const n = 1.
 sorts
-#food = {apple, chips}.
-#drinks = {coffee}.
+#food = {cereal, cutlets}.
+#drinks = {milk, coffee}.
 #electricals = {fridge}.
 #appliances = {coffeemaker} + #electricals.
 #containers = {coffeepot}.
@@ -10,7 +10,8 @@ sorts
 #locations = {kitchentable, livingroom_coffeetable, bedroom_coffeetable, livingroom_desk, bedroom_desk, counter_one, counter_three, kitchen_smalltable, kitchen}.
 #surfaces = #locations + #appliances.
 #agent = {human}.
-#other_agents = {ahagent}.
+#other_agents = {ahagent1, ahagent2}.
+% #other_agents = {ahagent}.
 #all_agents = #agent + #other_agents.
 #step = 0..n.
 #value = 0..5.
@@ -118,6 +119,9 @@ cost(move(R,L),2) :- #agent(R), #locations(L).
 
 % impossible to grab a third object if two objects are already in the hand of the agent
 -occurs(grab(R,O3),I):- holds(in_hand(R,O1),I), holds(in_hand(R,O2),I), O1 != O2, O2 != O3, O1 != O3, #agent(R), #graspable(O1), #graspable(O2), #graspable(O3).
+
+% impossible to grab coffee - not required; but lead to error when the agent randomly decide to pick somehtng while waiting
+-occurs(grab(R,coffee),I) :- #agent(R).
 
 %% put
 % impossible to put an object down if the objects is not in the hand of the agent.
@@ -229,14 +233,16 @@ next_to(livingroom_desk, livingroom_coffeetable).
 
 % --------------- %
 
-goal(I) :-  holds(on(apple,kitchentable),I), holds(on(chips,kitchentable),I).
-holds(at(human,kitchen_smalltable),0).
-holds(agent_at(ahagent,kitchen_smalltable),0).
-holds(in_hand(human,apple),0).
+goal(I) :- holds(on(cereal,livingroom_desk),I), holds(on(milk,kitchen_smalltable),I), holds(on(cutlets,bedroom_desk),I).
+holds(at(human,kitchentable),0).
+holds(agent_at(ahagent1,kitchentable),0).
+holds(agent_at(ahagent2,kitchentable),0).
+holds(on(cutlets,bedroom_desk),0).
 holds(on(coffeemaker,counter_three),0).
-holds(on(chips,kitchen_smalltable),0).
+holds(on(coffeepot,coffeemaker),0).
+holds(on(milk,kitchen_smalltable),0).
 holds(on(fridge,kitchen),0).
-holds(on(coffeepot,livingroom_desk),0).
+holds(on(cereal,livingroom_desk),0).
 -holds(opened(fridge),0).
 -holds(switchedon(coffeemaker),0).
 holds(made(coffee),0).
