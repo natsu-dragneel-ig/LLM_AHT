@@ -14,3 +14,18 @@ We then measured the ability of the agent to come up with answers to 32 differen
 | Counterfactual       |    1.00   |  0.78  |
 
 High values of precision and recall indicate the ability to automatically extract the correct literals to provide relational descriptions as explanations in response to different types of questions.
+
+## Execution Example
+
+### Execution Example 1.[Action Justification, Contrastive, Counterfactual]
+Questioner: Why did you find bread in step 0 ?
+Ad hoc Agent: Because I had not found the bread yet and I wanted to grab it in step 1.
+
+The agent's response draws attention to the target action's outcome being a requirement for executing a subsequent action. The agent can also be asked why it did not consider picking up a different object.
+
+Questioner: Why did you not find the water glass in step 0?
+Ad hoc Agent: Because I predicted that the human will find the water glass in step 0.
+    
+Questioner: Why do you think human will grab water glass in step 1?
+Ad hoc Agent: Because my prediction is that the human wants to bring the glass to the table.
+    
