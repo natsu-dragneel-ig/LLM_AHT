@@ -1,6 +1,4 @@
-# LLM_AHT
-Generic-to-Specific Reasoning and Ad Hoc Teamwork in Embodied AI Agents
-
+# Generic-to-Specific Reasoning and Ad Hoc Teamwork in Embodied AI Agents
 This repository contains the supplementary files for a hybrid architecture for ad hoc teamwork combining knowledge based reasoning with data-driven learning, while using Large Language Models (LLM) to predict future tasks of the agents.
 
 ## Folder structure
