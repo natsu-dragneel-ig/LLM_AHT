@@ -9,11 +9,13 @@ Our architecture enables an ad hoc agent to determine its actions through non-mo
 
 We use VirtualHome, a 3D simulation environment to evalute the architecture.
 
+## Video
 Example videos of human and ad hoc agents collaborating together to perform household tasks: [Execution Video](https://github.com/natsu-dragneel-ig/LLM_AHT/tree/main/Execution%20Video)
 
+## Providing Explanations of Decisions
 The use of knowledge-based reasoning and simple predictive models provide the ability for the ad hoc agent to generate relational descriptions in response to four types of questions: Causal, Contrastive, Justify beliefs and Counterfactual Questions. The performance of the architecture when creating these expelnation can be found here together with execution examples: [Explanations](https://github.com/natsu-dragneel-ig/LLM_AHT/tree/main/Explanations)
 
-## Folder structure
+## Folder Structure
 
 ```bash
 .
