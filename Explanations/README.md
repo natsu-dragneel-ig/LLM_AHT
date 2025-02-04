@@ -17,6 +17,7 @@ High values of precision and recall indicate the ability to automatically extrac
 
 ## Execution Example
 
+______________________________________________________________________
 ### Execution Example 1.Action Justification, Contrastive, Counterfactual
 
 *Questioner*: Why did you find bread in step 0 ?
@@ -35,6 +36,7 @@ The agent's response draws attention to the target action's outcome being a requ
 
 To answer questions about hypothetical situations, the ad hoc agent has to simulate the evolution of state, and the execution of actions by the human and the agent, for a few steps in order to identify and report the motivation for specific action choices
 
+______________________________________________________________________
 ### Execution Example 2. Action Justification, Contrastive, Belief Tracing
 
 *Questioner*: Why did you find cutlets in step 1 ?
