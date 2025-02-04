@@ -1,10 +1,17 @@
 # Generic-to-Specific Reasoning and Ad Hoc Teamwork in Embodied AI Agents
 
-Embodied AI agents deployed in assistive roles often have to collaborate with other agents (humans, AI systems) without prior coordination. Methods considered state of the art for such ad hoc teamwork often pursue a data-driven approach that needs a large labeled dataset of prior observations, lacks transparency, and makes it difficult to rapidly revise existing knowledge in response to changes. As the number of agents increases, the complexity of decision-making makes it difficult to collaborate effectively. This repository contains the supplementary files for a hybrid architecture for ad hoc teamwork leveraging the complementary strengths of knowledge-based and data-driven methods for reasoning and learning for ad hoc teamwork. For any given goal, our architecture enables each ad hoc agent to determine its actions through non-monotonic logical reasoning at different abstractions with: (a) prior commonsense domain-specific knowledge; (b) models learned and revised rapidly to predict the behavior of other agents; and (c) anticipated abstract future goals based on generic knowledge of similar domains in an existing Foundation Model. We use VirtualHome, a 3D simulation environment to evalute the architecture.
+Embodied AI agents deployed in assistive roles often have to collaborate with other agents (humans, AI systems) without prior coordination. Methods considered state of the art for such ad hoc teamwork often pursue a data-driven approach that needs a large labeled dataset of prior observations, lacks transparency, and makes it difficult to rapidly revise existing knowledge in response to changes. As the number of agents increases, the complexity of decision-making makes it difficult to collaborate effectively. This repository contains the supplementary files for a hybrid architecture for ad hoc teamwork leveraging the complementary strengths of knowledge-based and data-driven methods for reasoning and learning for ad hoc teamwork. 
 
-Example videos of human and ad hoc agents collaborating together to perform household tasks: Execution Video
+Our architecture enables each ad hoc agent to determine its actions through non-monotonic logical reasoning at different abstractions with: 
+(a). prior commonsense domain-specific knowledge
+(b). models learned and revised rapidly to predict the behavior of other agents
+(c). anticipated abstract future goals based on generic knowledge of similar domains in an existing Foundation Model. 
 
-The use of knowledge-based reasoning and simple predictive models provide the ability for the ad hoc agent to generate relational descriptions in response to four types of questions: Causal, Contrastive, Justify beliefs and Counterfactual Questions. The performance of the architecture when creating these expelnation can be found here together with execution examples: Explanations
+We use VirtualHome, a 3D simulation environment to evalute the architecture.
+
+Example videos of human and ad hoc agents collaborating together to perform household tasks: [Execution Video](https://github.com/natsu-dragneel-ig/LLM_AHT/tree/main/Execution%20Video)
+
+The use of knowledge-based reasoning and simple predictive models provide the ability for the ad hoc agent to generate relational descriptions in response to four types of questions: Causal, Contrastive, Justify beliefs and Counterfactual Questions. The performance of the architecture when creating these expelnation can be found here together with execution examples: [Explanations](https://github.com/natsu-dragneel-ig/LLM_AHT/tree/main/Explanations)
 
 ## Folder structure
 
