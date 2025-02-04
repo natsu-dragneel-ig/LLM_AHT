@@ -1,5 +1,8 @@
 # Generic-to-Specific Reasoning and Ad Hoc Teamwork in Embodied AI Agents
-This repository contains the supplementary files for a hybrid architecture for ad hoc teamwork combining knowledge based reasoning with data-driven learning, while using Large Language Models (LLM) to predict future tasks of the agents.
+
+Embodied AI agents deployed in assistive roles often have to collaborate with other agents (humans, AI systems) without prior coordination. Methods considered state of the art for such ad hoc teamwork often pursue a data-driven approach that needs a large labeled dataset of prior observations, lacks transparency, and makes it difficult to rapidly revise existing knowledge in response to changes. As the number of agents increases, the complexity of decision-making makes it difficult to collaborate effectively. This repository contains the supplementary files for a hybrid architecture for ad hoc teamwork leveraging the complementary strengths of knowledge-based and data-driven methods for reasoning and learning for ad hoc teamwork. For any given goal, our architecture enables each ad hoc agent to determine its actions through non-monotonic logical reasoning at different abstractions with: (a) prior commonsense domain-specific knowledge; (b) models learned and revised rapidly to predict the behavior of other agents; and (c) anticipated abstract future goals based on generic knowledge of similar domains in an existing Foundation Model. We use VirtualHome, a 3D simulation environment to evalute the architecture.
+
+
 
 ## Folder structure
 
