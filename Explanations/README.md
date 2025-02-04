@@ -1,9 +1,11 @@
 Our architecture enables the ad hoc agent to generate relational descriptions as explanations of its decisions and beliefs and those of the other agents.
 
+## Experiments
 For our experiments we designed different configurations in the VirtualHome each with a different arrangement and status of objects in the initial condition, 
 **e.g.**, *bread on the kitchen table instead of the counter, microwave open instead of closed*.
 We then measured the ability of the agent to come up with answers to 32 different questions (divided between the four types of questions- causal, contrastive, justify beliefs and counterfactuals) by recording the precision and recall values of retrieving the literals to answer these questions.
 
+## Results
 | Question type        | Precision | Recall |
 | :------------------- | :-------: | -----: |
 | Action justification |    1.00   |  1.00  |
