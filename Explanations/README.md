@@ -17,15 +17,32 @@ High values of precision and recall indicate the ability to automatically extrac
 
 ## Execution Example
 
-### Execution Example 1.[Action Justification, Contrastive, Counterfactual]
-Questioner: Why did you find bread in step 0 ?
-Ad hoc Agent: Because I had not found the bread yet and I wanted to grab it in step 1.
+### Execution Example 1.Action Justification, Contrastive, Counterfactual
+
+*Questioner*: Why did you find bread in step 0 ?
+
+*Ad hoc Agent*: Because I had not found the bread yet and I wanted to grab it in step 1.
 
 The agent's response draws attention to the target action's outcome being a requirement for executing a subsequent action. The agent can also be asked why it did not consider picking up a different object.
 
-Questioner: Why did you not find the water glass in step 0?
-Ad hoc Agent: Because I predicted that the human will find the water glass in step 0.
+*Questioner*: Why did you not find the water glass in step 0?
+
+*Ad hoc Agent*: Because I predicted that the human will find the water glass in step 0.
     
-Questioner: Why do you think human will grab water glass in step 1?
-Ad hoc Agent: Because my prediction is that the human wants to bring the glass to the table.
-    
+*Questioner*: Why do you think human will grab water glass in step 1?
+
+*Ad hoc Agent*: Because my prediction is that the human wants to bring the glass to the table.
+
+To answer questions about hypothetical situations, the ad hoc agent has to simulate the evolution of state, and the execution of actions by the human and the agent, for a few steps in order to identify and report the motivation for specific action choices
+
+### Execution Example 2. Action Justification, Contrastive, Belief Tracing
+
+*Questioner*: Why did you find cutlets in step 1 ?
+
+*Ad hoc Agent*: Because I have not found the cutlets and I wanted to grab them in time step 2.
+
+*Questioner*: Why did you not grab bread in step 1?
+
+*Ad hoc Agent*: Because the human was holding the bread.
+
+This exchange demonstrates the ability of the ad hoc agent to change its plan in order to prevent a conflict with the human and to justify this decision.
