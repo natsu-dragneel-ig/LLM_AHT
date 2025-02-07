@@ -15,6 +15,15 @@ Example videos of human and ad hoc agents collaborating together to perform hous
 ## Providing Explanations of Decisions
 The use of knowledge-based reasoning and simple predictive models provide the ability for the ad hoc agent to generate relational descriptions in response to four types of questions: Causal, Contrastive, Justify beliefs and Counterfactual Questions. The performance of the architecture when creating these explanations can be found here together with execution examples: [Explanations](https://github.com/natsu-dragneel-ig/LLM_AHT/tree/main/Explanations)
 
+## Additional Results on Scalability
+Following table shows the average number of steps and time taken by different teams, Team1 (human, ad hoc agent), Team2 (human, two ad hoc agents) and Team3 (human, three ad hoc agents) to complete 100 task routines when collaborating together. The architecture scale to different number of agents efficiently improving performance.
+
+|            Agent Team           |   Steps   | Time(s) |
+| :------------------------------ | :-------: | -----:  |
+| Team1 (human + 1 ad hoc agent)  |    26.8   |  361.0  |
+| Team2 (human + 2 ad hoc agents) |    22.8   |  329.4  |
+| Team3 (human + 3 ad hoc agents) |    20.2   |  313.9  |
+    
 ## Folder Structure
 
 ```bash
