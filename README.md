@@ -22,7 +22,7 @@ Following table shows the average number of steps and time taken by different te
 | :------------------------------ | :-------: | -----:  |
 | Team1 (human + 1 ad hoc agent)  |    26.8   |  361.0  |
 | Team2 (human + 2 ad hoc agents) |    22.8   |  329.4  |
-| Team3 (human + 3 ad hoc agents) |    20.2   |  313.9  |
+| Team3 (human + 3 ad hoc agents) |    19.5   |  313.9  |
     
 ## Folder Structure
 
