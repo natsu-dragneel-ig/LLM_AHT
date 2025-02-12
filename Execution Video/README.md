@@ -7,4 +7,4 @@ The action selection of ad hoc agents enhances team collaboration and prevents c
 
 In Video 3, four agents—three ad hoc agents and one human—collaborate to complete a series of household tasks. The architecture scales efficiently to accommodate a larger number of agents, leading to improved performance.
 
-Each video is recorded from a camera positioned behind each agent, providing a clear view of their tasks. Due to GitHub’s file size limitations, we have uploaded them separately.
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/l-4D-LtNX8k/0.jpg)](https://www.youtube.com/watch?v=l-4D-LtNX8k)
