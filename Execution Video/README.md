@@ -1,6 +1,6 @@
 ## Video 1,2
 
-In Video 1 and 2 a single ad hoc agent is collaborating with a human to achive daily household tasks.
+In Video 1 and 2, a single ad hoc agent is collaborating with a human to achive daily household tasks.
 
 ## Video 3
 
