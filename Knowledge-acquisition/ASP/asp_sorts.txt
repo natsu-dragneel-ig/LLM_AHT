@@ -1,0 +1,12 @@
+food = ['cereal', 'breadslice', 'bananas', 'apple', 'cupcake', 'cutlets', 'chips', 'candybar', 'plum']
+drinks = ['milk', 'wine', 'juice', 'coffee']
+electricals = ['dishwasher']
+appliances = ['computer', 'coffeemaker'] + electricals
+plates = ['plate']
+glasses = ['waterglass', 'mug']
+containers = ['coffeepot'] + plates + glasses
+others = ['cellphone', 'book', 'boardgame']
+furniture_surfaces = ['kitchentable', 'livingroom_coffeetable', 'bedroom_coffeetable', 'livingroom_desk', 'bedroom_desk', 'counter_one', 'counter_three', 'kitchen_smalltable']
+surfaces = furniture_surfaces + appliances
+graspable = food + drinks + containers + others
+objects = appliances + graspable

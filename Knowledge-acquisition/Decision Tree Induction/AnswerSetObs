@@ -1,0 +1,1 @@
+{holds(at(ahagent,counter_three),0), holds(on(dishwasher,counter_three),0), holds(switchedon(dishwasher),1), holds(on(dishwasher,counter_three),1), holds(at(ahagent,counter_three),1)}
