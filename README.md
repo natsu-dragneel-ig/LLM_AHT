@@ -49,10 +49,10 @@ Source code can be found here: [Knowledge-acquisition](https://github.com/hharit
 ├── ASP/human_pre.sp        # Answer Set Prolog implementation of the human.
 ├── Explanations            # Source code and results(with examples) for ad hoc agents providing explanations of its behaviour when using KAT.
 ├── Knowledge-acquisition   # Source code for acquiring new knowledge by the ad hoc agent when using KAT.
-├── Execution_traces.pdf    # Execution traces demonstrating ad hoc agent's performance when using task anticipation capabilities.
+├── Execution_traces.pdf    # Execution traces demonstrating ad hoc agent's performance when using the task anticipation component.
 ├── Models                  # Behaviour models learned by the ad hoc agent for other agents.
 ├── simulation              # Files from the VirtualHome domain with modification.
-├── main.py                 # Main file
+├── main.py                 # Main file.
 └── utils.py                # Utility file.
 
 ```
