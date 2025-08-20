@@ -1,13 +1,12 @@
 # Reasoning with Commonsense Knowledge and Heuristically-learned Models for Ad hoc Human - Agent Collaboration
 
-Embodied AI agents deployed in assistive roles often have to collaborate with other agents (humans, AI systems) without prior coordination. Methods considered state of the art for such ad hoc teamwork often pursue a data-driven approach that needs a large labeled dataset of prior observations, lacks transparency, and makes it difficult to rapidly revise existing knowledge in response to changes. This repository contains the supplementary files for a hybrid architecture for ad hoc teamwork leveraging the complementary strengths of knowledge-based and data-driven methods for reasoning and learning for ad hoc teamwork. 
+AI agents deployed to cooperate with others are often required to do so without prior coordination. State of the art approaches for such ad hoc teamwork pose this task as a learning problem, using a large labeled dataset to model the action choices of other agents (or agent types) and determine the actions of the ad hoc agent. These methods lack transparency and make it difficult to rapidly revise existing knowledge in response to changes. We present an architecture for ad hoc teamwork that leverages the complementary strengths of knowledge-based and data-driven methods for reasoning and learning. For any given goal, the ad hoc agent determines its actions through non-monotonic logical reasoning with: 
+- (a) prior domain specific commonsense knowledge;
+- (b) models learned and revised rapidly to predict the behavior of other agents; and
+- (c) anticipated abstract future goals based on generic knowledge of similar situations in an existing foundation model.
 
-Our architecture enables an ad hoc agent to determine its actions through non-monotonic logical reasoning at different abstractions with: 
-- a. prior commonsense domain-specific knowledge
-- b. models learned and revised rapidly to predict the behavior of other agents
-- c. anticipated abstract future goals based on generic knowledge of similar domains in an existing Foundation Model.
-
-We use VirtualHome, a 3D simulation environment to evalute the architecture.
+The agent also processes natural language descriptions and observations of other agents’ behavior, incrementally acquiring and revising knowledge in the form of objects, actions, and axioms that govern domain dynamics.
+We experimentally evaluate the capabilities of our architecture in VirtualHome, a realistic simulation environment.
 
 ## Video
 Example videos of human and ad hoc agents collaborating together to perform household tasks:
@@ -35,7 +34,11 @@ Following table shows the average number of steps and time taken by different te
 | Team1 (human + 1 ad hoc agent)  |    26.8   |  361.0  |
 | Team2 (human + 2 ad hoc agents) |    22.8   |  329.4  |
 | Team3 (human + 3 ad hoc agents) |    19.5   |  307.9  |
-    
+
+## Acquiring new Knowledge
+The ad hoc agent incrementally revise prior knowledge based on LLM-based processing of natural language descriptions of actions and outcomes, and decision tree induction applied to observations.
+Source code can be found here: [Knowledge-acquisition](https://github.com/hharithaki/Task-Anticipation/tree/main/Knowledge-acquisition)
+
 ## Folder Structure
 
 ```bash
@@ -45,8 +48,10 @@ Following table shows the average number of steps and time taken by different te
 ├── ASP/human.sp            # Answer Set Prolog implementation of the human after refinment.
 ├── ASP/human_pre.sp        # Answer Set Prolog implementation of the human.
 ├── Explanations            # Code and results(with examples) for ad hoc agents providing explanations of its behaviour.
+├── Execution_traces.pdf    # Execution traces demonstrating the ad hoc agent's performance when using different components of the architecture.
 ├── Models                  # Behaviour models learned by the ad hoc agent for other agents.
 ├── simulation              # Files from the VirtualHome domain with modification.
 ├── main.py                 # Main file
 └── utils.py                # Utility file.
+
 ```
