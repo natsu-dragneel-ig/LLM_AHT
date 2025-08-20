@@ -48,6 +48,7 @@ Source code can be found here: [Knowledge-acquisition](https://github.com/hharit
 ├── ASP/human.sp            # Answer Set Prolog implementation of the human after refinment.
 ├── ASP/human_pre.sp        # Answer Set Prolog implementation of the human.
 ├── Explanations            # Code and results(with examples) for ad hoc agents providing explanations of its behaviour.
+├── Knowledge-acquisition   # Code for acquiring new knowledge by the ad hoc agents.
 ├── Execution_traces.pdf    # Execution traces demonstrating the ad hoc agent's performance when using different components of the architecture.
 ├── Models                  # Behaviour models learned by the ad hoc agent for other agents.
 ├── simulation              # Files from the VirtualHome domain with modification.
